@@ -1,0 +1,2186 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>湖北滔伟｜产品体系</title>
+    <style>
+      :root {
+        --bg: #f2efe7;
+        --paper: #fbfaf6;
+        --ink: #0d2020;
+        --green: #0e6658;
+        --green2: #164b43;
+        --mint: #dfeae5;
+        --orange: #ed7540;
+        --sand: #e7d9c5;
+        --muted: #687571;
+        --line: rgba(13, 32, 32, 0.14);
+        --shadow: 0 30px 90px rgba(13, 32, 32, 0.14);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+        line-height: 1.65;
+      }
+      button,
+      input {
+        font: inherit;
+      }
+      button {
+        cursor: pointer;
+      }
+      .shell {
+        width: min(1200px, calc(100% - 40px));
+        margin: auto;
+      }
+      .topbar {
+        position: fixed;
+        z-index: 30;
+        inset: 0 0 auto;
+        background: rgba(242, 239, 231, 0.83);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--line);
+      }
+      .nav {
+        height: 72px;
+        display: flex;
+        align-items: center;
+        gap: 28px;
+      }
+      .brand {
+        font-weight: 900;
+        letter-spacing: 0.08em;
+      }
+      .navlinks {
+        margin-left: auto;
+        display: flex;
+        gap: 22px;
+      }
+      .nav a {
+        font-size: 14px;
+        text-decoration: none;
+        color: var(--muted);
+      }
+      .meter {
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        height: 2px;
+        width: 0;
+        background: var(--orange);
+      }
+      .hero {
+        min-height: 100svh;
+        padding: 150px 0 90px;
+        display: grid;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+      }
+      .orbit {
+        position: absolute;
+        width: 680px;
+        height: 680px;
+        right: -180px;
+        top: 85px;
+        border: 1px solid rgba(14, 102, 88, 0.22);
+        border-radius: 50%;
+        box-shadow:
+          inset 0 0 0 90px rgba(14, 102, 88, 0.035),
+          inset 0 0 0 180px rgba(14, 102, 88, 0.025);
+      }
+      .kicker {
+        color: var(--orange);
+        font-size: 12px;
+        font-weight: 900;
+        letter-spacing: 0.22em;
+      }
+      .hero h1,
+      .display {
+        font-family: Georgia, "Songti SC", serif;
+        letter-spacing: -0.055em;
+      }
+      .hero h1 {
+        font-size: clamp(60px, 9vw, 126px);
+        line-height: 0.92;
+        margin: 28px 0 35px;
+        max-width: 1000px;
+      }
+      .hero h1 em {
+        font-style: normal;
+        color: var(--orange);
+      }
+      .hero p {
+        font-size: clamp(18px, 2vw, 26px);
+        color: var(--muted);
+        max-width: 760px;
+      }
+      .actions {
+        display: flex;
+        gap: 12px;
+        margin-top: 44px;
+      }
+      .btn {
+        border: 0;
+        border-radius: 999px;
+        padding: 14px 24px;
+        transition: 0.25s;
+      }
+      .btn.dark {
+        background: var(--ink);
+        color: white;
+      }
+      .btn.line {
+        border: 1px solid var(--line);
+        background: transparent;
+      }
+      .btn:hover {
+        transform: translateY(-3px);
+      }
+      .section {
+        padding: 105px 0;
+      }
+      .dark {
+        background: var(--ink);
+        color: #f8f6ef;
+      }
+      .head {
+        display: grid;
+        grid-template-columns: 1fr 1.25fr;
+        align-items: end;
+        gap: 70px;
+        margin-bottom: 48px;
+      }
+      .head h2 {
+        font-size: clamp(40px, 5.5vw, 72px);
+        line-height: 1.04;
+        margin: 12px 0 0;
+      }
+      .head p {
+        color: var(--muted);
+        font-size: 18px;
+      }
+      .dark .head p {
+        color: #a8b5b0;
+      }
+      .path {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1px;
+        background: var(--line);
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        overflow: hidden;
+      }
+      .path article {
+        background: var(--paper);
+        padding: 28px;
+        min-height: 220px;
+      }
+      .path small {
+        color: var(--orange);
+        font-weight: 900;
+      }
+      .path h3 {
+        margin: 38px 0 10px;
+        font-size: 22px;
+      }
+      .path p {
+        font-size: 14px;
+        color: var(--muted);
+      }
+      .lab {
+        background: var(--paper);
+        border-radius: 28px;
+        padding: 40px;
+        box-shadow: var(--shadow);
+      }
+      .lab-top {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 34px;
+      }
+      .choices {
+        display: grid;
+        gap: 10px;
+      }
+      .choice {
+        border: 1px solid var(--line);
+        background: white;
+        border-radius: 14px;
+        padding: 15px;
+        text-align: left;
+        transition: 0.2s;
+      }
+      .choice:hover,
+      .choice.active {
+        background: var(--green);
+        color: white;
+        border-color: var(--green);
+      }
+      .result {
+        background: var(--ink);
+        color: white;
+        border-radius: 20px;
+        padding: 30px;
+        display: grid;
+        align-content: center;
+      }
+      .result small {
+        color: #d6b06e;
+      }
+      .result h3 {
+        font-size: 34px;
+        margin: 8px 0;
+      }
+      .result p {
+        color: #b8c3bf;
+      }
+      .engines {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+      }
+      .engine {
+        min-height: 410px;
+        border-radius: 24px;
+        padding: 30px;
+        background: var(--paper);
+        border: 1px solid var(--line);
+        position: relative;
+        overflow: hidden;
+        transition: 0.35s;
+      }
+      .engine:nth-child(2) {
+        background: #e6eee9;
+      }
+      .engine:nth-child(3) {
+        background: #f2e6dc;
+      }
+      .engine:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow);
+      }
+      .engine .n {
+        position: absolute;
+        right: 22px;
+        top: 0;
+        font: 80px Georgia;
+        color: rgba(13, 32, 32, 0.09);
+      }
+      .label {
+        display: inline-block;
+        background: var(--ink);
+        color: white;
+        border-radius: 999px;
+        padding: 6px 12px;
+        font-size: 12px;
+        font-weight: 800;
+      }
+      .engine h3 {
+        font-size: 34px;
+        line-height: 1.15;
+        margin: 95px 0 8px;
+      }
+      .engine b {
+        color: var(--green);
+        font-size: 19px;
+      }
+      .engine p {
+        margin-top: 50px;
+        color: var(--muted);
+      }
+      .tabs {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-bottom: 24px;
+      }
+      .tab {
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: #b8c3bf;
+        background: transparent;
+        border-radius: 999px;
+        padding: 10px 18px;
+      }
+      .tab.active {
+        background: var(--orange);
+        border-color: var(--orange);
+        color: white;
+      }
+      .panel {
+        display: none;
+      }
+      .panel.active {
+        display: block;
+        animation: rise 0.35s ease;
+      }
+      @keyframes rise {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      .summary {
+        display: grid;
+        grid-template-columns: 0.9fr 1.4fr;
+        gap: 14px;
+      }
+      .statement,
+      .facts {
+        background: #192c2e;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 22px;
+        padding: 32px;
+      }
+      .statement h3 {
+        font:
+          42px/1.18 Georgia,
+          "Songti SC",
+          serif;
+        margin: 18px 0;
+      }
+      .statement p {
+        color: #aab6b1;
+      }
+      .facts {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1px;
+        padding: 1px;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.12);
+      }
+      .fact {
+        background: #192c2e;
+        padding: 26px;
+      }
+      .fact small {
+        color: #d9b46f;
+      }
+      .fact strong {
+        display: block;
+        font-size: 19px;
+        margin-top: 7px;
+      }
+      .accordion {
+        margin-top: 14px;
+        display: grid;
+        gap: 8px;
+      }
+      .acc {
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 14px;
+        overflow: hidden;
+      }
+      .acc button {
+        width: 100%;
+        border: 0;
+        background: #162628;
+        color: white;
+        padding: 16px 18px;
+        text-align: left;
+        display: flex;
+        justify-content: space-between;
+      }
+      .acc .content {
+        display: none;
+        padding: 20px;
+        background: #1c3032;
+        color: #c7d0cd;
+      }
+      .acc.open .content {
+        display: block;
+      }
+      .content-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+      .mini {
+        border-left: 3px solid var(--orange);
+        padding: 4px 0 4px 14px;
+      }
+      .mini b {
+        display: block;
+        color: white;
+      }
+      .mini span {
+        font-size: 14px;
+      }
+      .toolbar {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+      }
+      .search {
+        width: 340px;
+        max-width: 100%;
+        padding: 13px 16px;
+        border: 1px solid var(--line);
+        background: var(--paper);
+        border-radius: 14px;
+        outline: none;
+      }
+      .filter {
+        border: 1px solid var(--line);
+        background: transparent;
+        border-radius: 999px;
+        padding: 9px 15px;
+      }
+      .filter.active {
+        background: var(--green);
+        color: white;
+      }
+      .products {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+      .product {
+        background: var(--paper);
+        border: 1px solid var(--line);
+        border-radius: 17px;
+        padding: 22px;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 15px;
+        transition: 0.25s;
+      }
+      .product:hover {
+        transform: translateY(-3px);
+        border-color: var(--green);
+      }
+      .product h4 {
+        margin: 0;
+        font-size: 20px;
+      }
+      .product p {
+        margin: 5px 0 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .price {
+        text-align: right;
+        color: var(--orange);
+        font-weight: 900;
+      }
+      .price small {
+        display: block;
+        color: var(--muted);
+        font-weight: 400;
+      }
+      .play-tabs {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-bottom: 24px;
+      }
+      .play-tab {
+        border: 1px solid var(--line);
+        background: transparent;
+        border-radius: 999px;
+        padding: 10px 18px;
+      }
+      .play-tab.active {
+        background: var(--ink);
+        color: white;
+      }
+      .play-panel {
+        display: none;
+      }
+      .play-panel.active {
+        display: block;
+      }
+      .grid2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+      }
+      .card {
+        background: var(--paper);
+        border: 1px solid var(--line);
+        border-radius: 19px;
+        padding: 26px;
+      }
+      .card h3 {
+        margin-top: 0;
+      }
+      .list {
+        display: grid;
+        gap: 0;
+      }
+      .row {
+        display: grid;
+        grid-template-columns: 150px 1fr;
+        gap: 18px;
+        padding: 15px 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .row b {
+        color: var(--green);
+      }
+      .timeline {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1px;
+        background: var(--line);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        overflow: hidden;
+      }
+      .timeline div {
+        background: var(--paper);
+        padding: 24px;
+        min-height: 190px;
+      }
+      .timeline b {
+        font-size: 12px;
+        color: var(--orange);
+      }
+      .timeline h4 {
+        font-size: 21px;
+        margin: 30px 0 8px;
+      }
+      .quote {
+        background: var(--green);
+        color: white;
+        border-radius: 22px;
+        padding: 32px;
+        font-size: 18px;
+      }
+      .quote strong {
+        display: block;
+        color: #d9b46f;
+        margin-bottom: 15px;
+      }
+      .matrix {
+        display: grid;
+        grid-template-columns: 1.25fr repeat(3, 1fr);
+        border-left: 1px solid var(--line);
+        border-top: 1px solid var(--line);
+      }
+      .matrix > * {
+        padding: 16px;
+        border-right: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        background: var(--paper);
+      }
+      .matrix .mh {
+        background: var(--ink);
+        color: white;
+        font-weight: 800;
+      }
+      .best {
+        color: var(--green);
+        font-weight: 900;
+      }
+      .quiz {
+        background: var(--green);
+        color: white;
+        border-radius: 28px;
+        padding: 50px;
+      }
+      .quiz h2 {
+        font-size: 42px;
+        margin: 0 0 28px;
+      }
+      .scenario {
+        font-size: 21px;
+        max-width: 850px;
+      }
+      .answers {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 25px;
+      }
+      .ans {
+        border: 1px solid rgba(255, 255, 255, 0.32);
+        background: transparent;
+        color: white;
+        border-radius: 999px;
+        padding: 12px 18px;
+      }
+      .feedback {
+        margin-top: 20px;
+        color: #f3d39a;
+        min-height: 30px;
+      }
+      .actions-list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        margin-top: 36px;
+      }
+      .act {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 14px;
+        padding: 16px;
+      }
+      .act input {
+        accent-color: var(--orange);
+      }
+      .top {
+        position: fixed;
+        right: 24px;
+        bottom: 24px;
+        width: 46px;
+        height: 46px;
+        border: 0;
+        border-radius: 50%;
+        background: var(--ink);
+        color: white;
+        opacity: 0;
+        transition: 0.2s;
+      }
+      .top.show {
+        opacity: 1;
+      }
+      .detail-note {
+        margin-top: 14px;
+        padding: 18px 20px;
+        border-radius: 14px;
+        background: #f0ece2;
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .language-panel {
+        margin-top: 14px;
+        background: var(--green);
+        color: white;
+        border-radius: 22px;
+        padding: 30px;
+      }
+      .language-panel h3 {
+        margin: 6px 0 10px;
+        font-size: 26px;
+      }
+      .language-panel p {
+        margin: 0 0 20px;
+        color: #dce9e5;
+      }
+      .language-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1px;
+        background: rgba(255, 255, 255, 0.22);
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 14px;
+        overflow: hidden;
+      }
+      .language-item {
+        background: var(--green);
+        padding: 20px;
+      }
+      .language-item b {
+        display: block;
+        color: #f2d39e;
+        margin-bottom: 6px;
+      }
+      .count {
+        margin-left: auto;
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .strategy-intro {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        align-items: center;
+        margin: -4px 0 20px;
+        padding: 16px 18px;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.42);
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .strategy-intro b {
+        color: var(--green);
+        font-size: 15px;
+      }
+      .empty {
+        grid-column: 1/-1;
+        padding: 42px;
+        text-align: center;
+        border: 1px dashed var(--line);
+        border-radius: 18px;
+        color: var(--muted);
+      }
+      .product {
+        position: relative;
+        overflow: hidden;
+        animation: rise 0.3s ease both;
+      }
+      .product:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background: var(--green);
+        opacity: 0;
+        transition: 0.25s;
+      }
+      .product:hover:before {
+        opacity: 1;
+      }
+      .product .tag {
+        display: inline-flex;
+        margin-top: 10px;
+        padding: 3px 9px;
+        border-radius: 999px;
+        background: var(--mint);
+        color: var(--green);
+        font-size: 12px;
+        font-weight: 800;
+      }
+      .filter,
+      .tab,
+      .play-tab {
+        transition: 0.22s;
+      }
+      .filter:hover,
+      .play-tab:hover {
+        border-color: var(--green);
+        transform: translateY(-1px);
+      }
+      .tab:hover {
+        border-color: rgba(255, 255, 255, 0.55);
+        color: white;
+      }
+      .filter:focus-visible,
+      .tab:focus-visible,
+      .play-tab:focus-visible,
+      .acc button:focus-visible {
+        outline: 3px solid rgba(237, 117, 64, 0.45);
+        outline-offset: 3px;
+      }
+      .hero-simple {
+        position: relative;
+        z-index: 2;
+      }
+      .hero-simple h1 {
+        max-width: 900px;
+      }
+      .hero-simple p {
+        max-width: 560px;
+      }
+      .direction-board {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+      }
+      .direction-card {
+        min-height: 520px;
+        display: flex;
+        flex-direction: column;
+        padding: 28px;
+        border: 1px solid var(--line);
+        border-radius: 26px;
+        color: var(--ink);
+        text-decoration: none;
+        overflow: hidden;
+        position: relative;
+        transition: 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+      .direction-card:after {
+        content: "";
+        position: absolute;
+        width: 180px;
+        height: 180px;
+        right: -90px;
+        top: -90px;
+        border: 1px solid rgba(13, 32, 32, 0.12);
+        border-radius: 50%;
+        transition: 0.4s;
+      }
+      .direction-card:hover {
+        transform: translateY(-9px);
+        box-shadow: var(--shadow);
+      }
+      .direction-card:hover:after {
+        transform: scale(1.35);
+      }
+      .d-one {
+        background: #f9f7f0;
+      }
+      .d-two {
+        background: #dfeae5;
+      }
+      .d-three {
+        background: #f2e4d8;
+      }
+      .direction-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--muted);
+      }
+      .direction-top span {
+        color: var(--orange);
+        font: 26px Georgia;
+      }
+      .direction-top small {
+        font-size: 10px;
+        font-weight: 900;
+        letter-spacing: 0.16em;
+      }
+      .direction-title {
+        margin: 74px 0 34px;
+      }
+      .direction-title p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 13px;
+      }
+      .direction-title h3 {
+        margin: 4px 0 12px;
+        font:
+          34px/1.15 Georgia,
+          "Songti SC",
+          serif;
+      }
+      .direction-title b {
+        color: var(--green);
+        font-size: 16px;
+      }
+      .direction-card dl {
+        margin: 0;
+        border-top: 1px solid var(--line);
+      }
+      .direction-card dl div {
+        display: grid;
+        grid-template-columns: 78px 1fr;
+        gap: 14px;
+        padding: 12px 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .direction-card dt {
+        color: var(--muted);
+        font-size: 12px;
+      }
+      .direction-card dd {
+        margin: 0;
+        font-size: 14px;
+        font-weight: 700;
+      }
+      .direction-go {
+        margin-top: auto;
+        padding-top: 28px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--green);
+        font-size: 13px;
+        font-weight: 800;
+      }
+      .direction-go i {
+        display: grid;
+        place-items: center;
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        background: var(--ink);
+        color: white;
+        font-style: normal;
+        transition: 0.25s;
+      }
+      .direction-card:hover .direction-go i {
+        transform: rotate(45deg);
+        background: var(--orange);
+      }
+      .navlinks a {
+        position: relative;
+        transition: color 0.22s;
+      }
+      .navlinks a:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 100%;
+        bottom: -8px;
+        height: 2px;
+        background: var(--orange);
+        transition: 0.25s;
+      }
+      .navlinks a:hover,
+      .navlinks a.current {
+        color: var(--ink);
+      }
+      .navlinks a.current:after {
+        right: 0;
+      }
+      .acc button span {
+        transition: transform 0.25s ease;
+      }
+      .acc.open button span {
+        transform: rotate(45deg);
+      }
+      .card,
+      .product,
+      .engine,
+      .statement,
+      .facts {
+        box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+      }
+      .section.reveal-ready .head,
+      .section.reveal-ready > .shell > :not(.head) {
+        opacity: 0;
+        transform: translateY(18px);
+        transition:
+          opacity 0.6s ease,
+          transform 0.6s ease;
+      }
+      .section.reveal-ready.is-visible .head,
+      .section.reveal-ready.is-visible > .shell > :not(.head) {
+        opacity: 1;
+        transform: none;
+      }
+      .section.reveal-ready.is-visible > .shell > :not(.head) {
+        transition-delay: 0.1s;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        *,
+        *:before,
+        *:after {
+          animation-duration: 0.01ms !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+      .hero-layout {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: clamp(40px, 7vw, 100px);
+        align-items: center;
+      }
+      .hero-copy {
+        position: relative;
+        z-index: 2;
+      }
+      .hero-copy h1 {
+        font-size: clamp(56px, 6.4vw, 92px);
+        max-width: 760px;
+      }
+      .hero-mark {
+        display: inline-flex;
+        margin-top: 18px;
+        padding: 7px 12px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        color: var(--green);
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+      }
+      .hero-system {
+        position: relative;
+        z-index: 2;
+        padding: 16px;
+        border: 1px solid rgba(13, 32, 32, 0.12);
+        border-radius: 28px;
+        background: rgba(251, 250, 246, 0.76);
+        box-shadow: 0 36px 100px rgba(13, 32, 32, 0.16);
+        backdrop-filter: blur(18px);
+      }
+      .system-top,
+      .system-foot {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 12px 18px;
+      }
+      .system-top span {
+        color: var(--orange);
+        font-size: 11px;
+        font-weight: 900;
+        letter-spacing: 0.2em;
+      }
+      .system-top b {
+        font-size: 13px;
+        color: var(--muted);
+      }
+      .system-row {
+        display: grid;
+        grid-template-columns: 42px 1fr auto;
+        gap: 14px;
+        align-items: center;
+        padding: 21px 16px;
+        border-top: 1px solid var(--line);
+        color: var(--ink);
+        text-decoration: none;
+        transition: 0.25s;
+      }
+      .system-row:hover {
+        background: var(--ink);
+        color: white;
+        border-radius: 16px;
+        transform: translateX(-6px);
+      }
+      .system-row i {
+        color: var(--orange);
+        font: 18px Georgia;
+      }
+      .system-row b,
+      .system-row small {
+        display: block;
+      }
+      .system-row small {
+        color: var(--muted);
+        margin-top: 3px;
+      }
+      .system-row:hover small {
+        color: #afbbb7;
+      }
+      .system-row em {
+        color: var(--green);
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 900;
+      }
+      .system-row:hover em {
+        color: #efb78b;
+      }
+      .system-foot {
+        padding: 18px 12px 8px;
+        color: var(--muted);
+        font-size: 11px;
+        letter-spacing: 0.08em;
+      }
+      .product-groups {
+        display: grid;
+        gap: 10px;
+        grid-column: 1 / -1;
+      }
+      .product-group {
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        overflow: hidden;
+        background: var(--paper);
+      }
+      .group-toggle {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr auto auto;
+        gap: 18px;
+        align-items: center;
+        padding: 20px 22px;
+        border: 0;
+        background: transparent;
+        color: var(--ink);
+        text-align: left;
+      }
+      .group-toggle b {
+        font-size: 19px;
+      }
+      .group-toggle span b,
+      .group-toggle span small {
+        display: block;
+      }
+      .group-toggle span small {
+        margin-top: 3px;
+      }
+      .group-toggle small {
+        color: var(--muted);
+      }
+      .group-toggle i {
+        color: var(--orange);
+        font-style: normal;
+        font-size: 22px;
+        transition: 0.25s;
+      }
+      .product-group.open .group-toggle i {
+        transform: rotate(45deg);
+      }
+      .group-body {
+        display: none;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 0 12px 12px;
+      }
+      .product-group.open .group-body {
+        display: grid;
+        animation: rise 0.3s ease;
+      }
+      .group-body .product {
+        box-shadow: none;
+        background: #f6f3eb;
+      }
+      @media (max-width: 850px) {
+        .navlinks {
+          display: none;
+        }
+        .head,
+        .lab-top,
+        .summary,
+        .hero-layout {
+          grid-template-columns: 1fr;
+        }
+        .hero-system {
+          max-width: 680px;
+        }
+        .path,
+        .timeline,
+        .actions-list {
+          grid-template-columns: 1fr 1fr;
+        }
+        .engines,
+        .direction-board,
+        .products,
+        .grid2 {
+          grid-template-columns: 1fr;
+        }
+        .direction-card {
+          min-height: 430px;
+        }
+        .content-grid,
+        .group-body,
+        .language-grid {
+          grid-template-columns: 1fr;
+        }
+        .speech-parts {
+          grid-template-columns: 1fr 1fr;
+        }
+        .hero {
+          min-height: 850px;
+        }
+        .orbit {
+          opacity: 0.4;
+        }
+        .section {
+          padding: 75px 0;
+        }
+      }
+      @media (max-width: 520px) {
+        .shell {
+          width: calc(100% - 24px);
+        }
+        .path,
+        .timeline,
+        .actions-list,
+        .speech-parts {
+          grid-template-columns: 1fr;
+        }
+        .hero h1 {
+          font-size: 58px;
+        }
+        .head h2 {
+          font-size: 42px;
+        }
+        .lab {
+          padding: 24px;
+        }
+        .matrix {
+          font-size: 12px;
+          overflow: auto;
+        }
+        .matrix > * {
+          padding: 10px;
+        }
+        .row {
+          grid-template-columns: 1fr;
+          gap: 4px;
+        }
+        .system-row {
+          grid-template-columns: 34px 1fr;
+        }
+        .system-row em {
+          display: none;
+        }
+        .strategy-intro {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="topbar">
+      <div class="shell nav">
+        <a class="brand" href="#home">湖北滔伟</a>
+        <div class="navlinks">
+          <a href="#routes">方向概览</a><a href="#directions">产品策略</a
+          ><a href="#products">产品体系</a><a href="#playbook">经营方式</a
+          ><a href="#synergy">协同关系</a>
+        </div>
+      </div>
+      <div class="meter" id="meter"></div>
+    </nav>
+    <main>
+      <section class="hero" id="home">
+        <div class="orbit"></div>
+        <div class="shell hero-simple">
+          <div class="kicker">MANUFACTURING MANAGEMENT SOLUTIONS</div>
+          <div class="hero-mark">湖北滔伟管理顾问有限公司</div>
+          <h1>湖北滔伟<br /><em>产品体系</em></h1>
+          <p>面向制造业企业的管理改善解决方案。</p>
+          <div class="actions">
+            <a class="btn dark" href="#routes">查看产品体系</a>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="routes" style="background: #ebe7dc">
+        <div class="shell">
+          <div class="head">
+            <div>
+              <div class="kicker">01 · THREE MARKET ROUTES</div>
+              <h2 class="display">同一套专业能力，以三种方式进入市场</h2>
+            </div>
+            <p>
+              定制化解决复杂问题，标准化实现规模复制，结构化项目满足国央企采购与验收要求。
+            </p>
+          </div>
+          <div class="engines">
+            <article class="engine">
+              <span class="n">01</span><span class="label">传统老市场</span>
+              <h3>以定制项目稳住现金流</h3>
+              <b>灵活响应</b>
+              <p>
+                客户主动上门｜全产品线非标定制<br />稳定收入 · 案例源泉 ·
+                团队练兵
+              </p>
+            </article>
+            <article class="engine">
+              <span class="n">02</span><span class="label">渠道开拓</span>
+              <h3>以标准产品扩大规模</h3>
+              <b>合作放大</b>
+              <p>渠道伙伴推荐｜七款标准化产品<br />价格透明 · 交付可复制</p>
+            </article>
+            <article class="engine">
+              <span class="n">03</span><span class="label">国央企投标</span>
+              <h3>以重点项目提升品牌</h3>
+              <b>结构化攻坚</b>
+              <p>招投标平台｜班组建设＋流程优化<br />合规响应 · 高利润项目</p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="section dark" id="directions">
+        <div class="shell">
+          <div class="head">
+            <div>
+              <div class="kicker" style="color: #d9b46f">
+                02 · PRODUCT STRATEGY
+              </div>
+              <h2 class="display">三条市场路径，对应三种产品组织方式</h2>
+            </div>
+            <p>
+              传统市场强调按需组合，渠道市场强调标准化输出，国央企项目聚焦重点产品。切换方向，可查看各自的产品边界与业务重点。
+            </p>
+          </div>
+          <div class="tabs">
+            <button class="tab active" data-tab="d1">方向一 · 传统市场</button
+            ><button class="tab" data-tab="d2">方向二 · 渠道</button
+            ><button class="tab" data-tab="d3">方向三 · 国央企</button>
+          </div>
+          <div class="panel active" id="d1">
+            <div class="summary">
+              <div class="statement">
+                <span class="label">定位</span>
+                <h3>现金流基本盘</h3>
+                <p>客户主动找上门，按需定制，不求快但求稳。</p>
+              </div>
+              <div class="facts">
+                <div class="fact">
+                  <small>客户画像</small><strong>本地及周边民营制造业</strong>
+                </div>
+                <div class="fact">
+                  <small>企业规模</small><strong>年营收 3000 万—5 亿</strong>
+                </div>
+                <div class="fact">
+                  <small>需求状态</small
+                  ><strong>明确需求，通常由问题驱动</strong>
+                </div>
+                <div class="fact">
+                  <small>决策角色</small><strong>老板 / HR / 生产负责人</strong>
+                </div>
+              </div>
+            </div>
+            <div class="accordion">
+              <div class="acc open">
+                <button>产品覆盖范围 <span>＋</span></button>
+                <div class="content">
+                  <div class="content-grid">
+                    <div class="mini">
+                      <b>精益生产</b
+                      ><span
+                        >精益现场快诊、5S战斗营、降本增效百日战、精益班组锻造</span
+                      >
+                    </div>
+                    <div class="mini">
+                      <b>组织发展（OD）</b
+                      ><span
+                        >组织健康体检、战略解码工作坊、绩效破局、企业文化落地工程</span
+                      >
+                    </div>
+                    <div class="mini">
+                      <b>服务礼仪</b
+                      ><span
+                        >招商第一面、礼序·国企接待标准、服务触点规范营</span
+                      >
+                    </div>
+                    <div class="mini">
+                      <b>培训类</b><span>各类管理内训，按客户需求定制课题</span>
+                    </div>
+                    <div class="mini">
+                      <b>ISO体系类</b><span>按客户需求对接或交付</span>
+                    </div>
+                    <div class="mini">
+                      <b>其他非标类</b
+                      ><span>客户提出什么需求，快速响应、定制交付</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="acc">
+                <button>定价与交付原则 <span>＋</span></button>
+                <div class="content">
+                  <div class="content-grid">
+                    <div class="mini">
+                      <b>定价原则</b
+                      ><span
+                        >按项目定价，一事一议；参考标准产品价格区间，根据客户规模、项目复杂度、老师投入天数浮动；老客户适当优惠。</span
+                      >
+                    </div>
+                    <div class="mini">
+                      <b>交付原则</b
+                      ><span
+                        >老师团队按项目制交付；一对一服务，高度定制；周期从几天到几个月不等。</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="panel" id="d2">
+            <div class="summary">
+              <div class="statement">
+                <span class="label">定位</span>
+                <h3>规模化放大器</h3>
+                <p>通过渠道伙伴放大销售能力，自己专注交付。</p>
+              </div>
+              <div class="facts">
+                <div class="fact">
+                  <small>客户入口</small><strong>渠道伙伴推荐</strong>
+                </div>
+                <div class="fact">
+                  <small>产品形态</small><strong>七款标准化产品</strong>
+                </div>
+                <div class="fact">
+                  <small>销售方式</small><strong>渠道合作＋标准化交付</strong>
+                </div>
+                <div class="fact">
+                  <small>核心目标</small><strong>放大销量、降低获客成本</strong>
+                </div>
+              </div>
+            </div>
+            <div class="accordion">
+              <div class="acc open">
+                <button>七款标准产品｜精益＋OD 双线输出 <span>＋</span></button>
+                <div class="content">
+                  <div class="content-grid">
+                    <div class="mini">
+                      <b>01 · 精益现场快诊</b><span>1.98万—2.98万｜3天</span>
+                    </div>
+                    <div class="mini">
+                      <b>02 · 5S战斗营</b
+                      ><span>4.98万—6.98万｜5天＋21天固化</span>
+                    </div>
+                    <div class="mini">
+                      <b>03 · 降本增效百日战</b><span>12.8万—19.8万｜12周</span>
+                    </div>
+                    <div class="mini">
+                      <b>04 · 精益班组锻造</b><span>6.98万—9.98万｜3个月</span>
+                    </div>
+                    <div class="mini">
+                      <b>05 · 组织健康体检</b><span>4.98万—7.98万｜2周</span>
+                    </div>
+                    <div class="mini">
+                      <b>06 · 战略解码工作坊</b><span>8.98万—13.8万｜2周</span>
+                    </div>
+                    <div class="mini">
+                      <b>07 · 绩效破局</b><span>9.98万—16.8万｜6—8周</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="acc">
+                <button>标准产品的四项优势 <span>＋</span></button>
+                <div class="content">
+                  <div class="content-grid">
+                    <div class="mini">
+                      <b>价格透明</b
+                      ><span>渠道容易向客户报价，减少反复沟通与议价时间</span>
+                    </div>
+                    <div class="mini">
+                      <b>交付标准</b
+                      ><span>客户所得清晰，交付可复制、质量可控</span>
+                    </div>
+                    <div class="mini">
+                      <b>周期明确</b
+                      ><span>客户清楚交付时间，也便于规划老师时间</span>
+                    </div>
+                    <div class="mini">
+                      <b>口碑可预期</b
+                      ><span>渠道伙伴敢于推荐，减少项目售后风险</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="acc">
+                <button>渠道伙伴｜五类合作对象 <span>＋</span></button>
+                <div class="content">
+                  <div class="content-grid">
+                    <div class="mini">
+                      <b>惠企公司</b
+                      ><span
+                        >各地中小企业服务中心、惠企政策服务机构；有企业资源，需要专业服务商交付</span
+                      >
+                    </div>
+                    <div class="mini">
+                      <b>软件公司</b
+                      ><span
+                        >ERP、MES、OA、HR SaaS
+                        厂商；客户实施软件时发现流程乱，需要先做管理梳理</span
+                      >
+                    </div>
+                    <div class="mini">
+                      <b>人力资源公司</b
+                      ><span
+                        >猎头、劳务派遣、HR 外包公司；有企业 HR
+                        资源，可推荐组织发展类项目</span
+                      >
+                    </div>
+                    <div class="mini">
+                      <b>培训公司</b
+                      ><span
+                        >管理培训机构、商学院；有企业培训预算，可延伸咨询项目</span
+                      >
+                    </div>
+                    <div class="mini">
+                      <b>行业协会</b
+                      ><span
+                        >制造业各行业协会；有会员企业资源，可联合提供服务</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="panel" id="d3">
+            <div class="summary">
+              <div class="statement">
+                <span class="label">定位</span>
+                <h3>品牌与利润增长极</h3>
+                <p>通过国央企项目提升品牌溢价，获取高利润项目。</p>
+              </div>
+              <div class="facts">
+                <div class="fact">
+                  <small>客户</small><strong>制造业国央企及子公司</strong>
+                </div>
+                <div class="fact">
+                  <small>需求</small><strong>班组、流程、人员培训</strong>
+                </div>
+                <div class="fact">
+                  <small>来源</small><strong>招投标平台</strong>
+                </div>
+                <div class="fact">
+                  <small>主品</small><strong>班组建设＋流程优化</strong>
+                </div>
+              </div>
+            </div>
+            <div class="accordion">
+              <div class="acc open">
+                <button>产品与价格区间 <span>＋</span></button>
+                <div class="content">
+                  <div class="content-grid">
+                    <div class="mini">
+                      <b>班组建设｜10万—30万＋</b
+                      ><span
+                        >胜任力特训营、老带教计划、5S战斗营、标准化作业、改善提案系统、五星班组创建</span
+                      >
+                    </div>
+                    <div class="mini">
+                      <b>流程优化｜15万—50万＋</b
+                      ><span
+                        >跨部门流程梳理与优化、审批效率提升、制度标准化</span
+                      >
+                    </div>
+                    <div class="mini">
+                      <b>人员培训｜5万—20万</b
+                      ><span>管理能力提升、精益意识培训、内训师培养等</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="acc">
+                <button>为什么聚焦班组建设与流程优化 <span>＋</span></button>
+                <div class="content">
+                  <div class="content-grid">
+                    <div class="mini">
+                      <b>政策导向明确</b
+                      ><span>国资委要求加强班组建设、提升基础管理水平</span>
+                    </div>
+                    <div class="mini">
+                      <b>合规风险较低</b
+                      ><span>不涉及核心经营数据，不触碰安全、环保红线</span>
+                    </div>
+                    <div class="mini">
+                      <b>竞品相对较少</b
+                      ><span>大型咨询公司通常聚焦战略与组织变革</span>
+                    </div>
+                    <div class="mini">
+                      <b>专业能力匹配</b
+                      ><span>精益经验可直接转化为班组和流程工具</span>
+                    </div>
+                    <div class="mini">
+                      <b>可模块化交付</b
+                      ><span>适合招投标的结构化与可验收要求</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="products">
+        <div class="shell">
+          <div class="head">
+            <div>
+              <div class="kicker">03 · PRODUCT PORTFOLIO</div>
+              <h2 class="display">从市场方向出发，快速找到对应产品</h2>
+            </div>
+            <p>
+              同一套专业能力，以三种产品策略进入市场：传统市场按需组合，渠道市场标准化输出，国央企项目聚焦重点产品。
+            </p>
+          </div>
+          <div class="toolbar" role="tablist" aria-label="产品策略">
+            <button class="filter active" data-filter="traditional">
+              方向一 · 传统市场</button
+            ><button class="filter" data-filter="channel">
+              方向二 · 渠道产品</button
+            ><button class="filter" data-filter="soe">方向三 · 国央企</button
+            ><input
+              class="search"
+              id="search"
+              aria-label="搜索当前策略下的产品"
+              placeholder="搜索当前策略下的产品…"
+            /><span class="count" id="productCount"></span>
+          </div>
+          <div class="strategy-intro">
+            <b id="strategyTitle"></b><span id="strategyIntro"></span>
+          </div>
+          <div class="products" id="productGrid" aria-live="polite"></div>
+        </div>
+      </section>
+      <section class="section" id="playbook" style="background: #ebe7dc">
+        <div class="shell">
+          <div class="head">
+            <div>
+              <div class="kicker">04 · MARKET APPROACH</div>
+              <h2 class="display">不同的市场入口，需要不同的经营方式</h2>
+            </div>
+            <p>
+              传统市场重关系维护，渠道合作重机制协同，国央企项目重规范响应。
+            </p>
+          </div>
+          <div class="play-tabs">
+            <button class="play-tab active" data-play="p1">传统市场</button
+            ><button class="play-tab" data-play="p2">渠道合作</button
+            ><button class="play-tab" data-play="p3">国央企项目</button>
+          </div>
+          <div class="play-panel active" id="p1">
+            <div class="grid2">
+              <div class="card">
+                <h3>持续经营客户关系</h3>
+                <div class="list">
+                  <div class="row">
+                    <b>维护老客户</b
+                    ><span>定期回访、节日问候、分享行业动态，保持温度。</span>
+                  </div>
+                  <div class="row">
+                    <b>口碑转介绍</b
+                    ><span
+                      >每个项目结束后主动请求转介绍：“您认识的三家企业里，哪一家最需要我们的帮助？”</span
+                    >
+                  </div>
+                  <div class="row">
+                    <b>内容吸引</b
+                    ><span
+                      >持续发布《车间里的真相》视频、精益周记、案例白皮书，保持专业曝光。</span
+                    >
+                  </div>
+                  <div class="row">
+                    <b>快速响应</b
+                    ><span>客户有需求，24 小时内响应、3 天内出方案。</span>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <h3>方向一的战略意义</h3>
+                <div class="list">
+                  <div class="row">
+                    <b>现金流稳定</b
+                    ><span
+                      >这是公司的“压舱石”，无论其他方向进展如何，这块收入是稳定的。</span
+                    >
+                  </div>
+                  <div class="row">
+                    <b>案例源泉</b
+                    ><span
+                      >方向一的每个项目都可以沉淀为案例，为方向二和方向三提供素材。</span
+                    >
+                  </div>
+                  <div class="row">
+                    <b>团队练兵</b
+                    ><span
+                      >新顾问可以在方向一的项目中锻炼能力，成熟后再分配到方向二、方向三。</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="play-panel" id="p2">
+            <div class="grid2">
+              <div class="card">
+                <h3>合作模式</h3>
+                <div class="list">
+                  <div class="row">
+                    <b>合作原则</b
+                    ><span
+                      >渠道伙伴负责前端——客户接洽、商务；湖北滔伟负责后端——交付。</span
+                    >
+                  </div>
+                  <div class="row">
+                    <b>利益分配</b
+                    ><span
+                      >渠道伙伴拿佣金，建议
+                      15%—25%，视项目大小和渠道贡献度；湖北滔伟保障交付质量。</span
+                    >
+                  </div>
+                  <div class="row">
+                    <b>合作机制</b
+                    ><span
+                      >签署框架合作协议，明确各自职责、利益分配和项目流程。</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <h3>渠道开拓的打法</h3>
+                <div class="list">
+                  <div class="row">
+                    <b>梳理清单</b
+                    ><span>梳理本地渠道伙伴清单，主动拜访，建立合作意向。</span>
+                  </div>
+                  <div class="row">
+                    <b>建立机制</b
+                    ><span
+                      >签署框架协议，明确合作机制，并为渠道伙伴进行产品培训。</span
+                    >
+                  </div>
+                  <div class="row">
+                    <b>跑通项目</b
+                    ><span>产生第一批合作项目，跑通渠道合作闭环。</span>
+                  </div>
+                  <div class="row">
+                    <b>持续复盘</b
+                    ><span>复盘渠道效果，淘汰低效渠道，发展高效渠道。</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="quote" style="margin-top: 14px">
+              <strong>渠道拓展话术模板</strong
+              >“XX总，我们是做制造业企业服务的——精益生产这边有现场快诊、5S战斗营、百日战等标准化产品；组织发展这边有健康体检、战略解码、绩效破局等成熟产品。听说您这边服务了很多制造企业，有些客户可能需要现场管理提升、降本增效，或者组织效能优化方面的支持。我们有标准化产品，价格透明、交付周期明确，可以合作——您介绍客户，我们来交付，给您留足够的空间。方便约个时间聊聊吗？”
+            </div>
+            <div class="detail-note">
+              <b>关键提醒：</b
+              >佣金及时支付，不绕过渠道直接联系客户；客户归属清晰界定，避免渠道纠纷。
+            </div>
+          </div>
+          <div class="play-panel" id="p3">
+            <div class="grid2">
+              <div class="card">
+                <h3>从入库到差异化竞争</h3>
+                <div class="list">
+                  <div class="row">
+                    <b>01 入库</b
+                    ><span
+                      >申请进入目标国央企的供应商名录。不入库就无法投标，这是第一步。</span
+                    >
+                  </div>
+                  <div class="row">
+                    <b>02 信息获取</b
+                    ><span
+                      >持续关注目标企业的采购平台、公共资源交易网，第一时间获取招标信息。</span
+                    >
+                  </div>
+                  <div class="row">
+                    <b>03 标书响应</b
+                    ><span
+                      >严格按照招标文件要求撰写技术标＋商务标；格式要求严格，必须逐项响应。</span
+                    >
+                  </div>
+                  <div class="row">
+                    <b>04 差异化竞争</b
+                    ><span
+                      >突出“实战派老师＋本地化服务＋精益专业背景”，在竞标中建立差异化优势。</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <h3>投标竞争力分析</h3>
+                <div class="list">
+                  <div class="row">
+                    <b>大型咨询公司</b
+                    ><span
+                      >优势：价格更灵活、落地性更强、响应更快；短板：品牌知名度较低。</span
+                    >
+                  </div>
+                  <div class="row">
+                    <b>本地小型公司</b
+                    ><span
+                      >优势：精益专业度更高、老师实战经验更强；短板：客户关系不如他们深。</span
+                    >
+                  </div>
+                  <div class="row">
+                    <b>高校 / 研究院所</b
+                    ><span>优势：更接地气、更可操作；短板：学术背景较弱。</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="language-panel">
+              <div class="kicker" style="color: #f2d39e">PROPOSAL LANGUAGE</div>
+              <h3>国央企方案的语言要求</h3>
+              <div class="language-grid">
+                <div class="language-item">
+                  <b>党建融合</b
+                  ><span
+                    >方案中必须体现“党建＋班建”“党建＋流程”的融合思路。</span
+                  >
+                </div>
+                <div class="language-item">
+                  <b>合规保障</b
+                  ><span>明确写清数据安全、保密协议、廉洁承诺。</span>
+                </div>
+                <div class="language-item">
+                  <b>验收标准</b><span>每个交付物都要有明确的验收标准。</span>
+                </div>
+                <div class="language-item">
+                  <b>政治站位</b
+                  ><span>引用国资委、发改委等政策文件作为依据。</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="synergy">
+        <div class="shell">
+          <div class="head">
+            <div>
+              <div class="kicker">05 · ONE GROWTH SYSTEM</div>
+              <h2 class="display">三条方向，最终汇入同一套增长系统</h2>
+            </div>
+            <p>
+              传统市场提供稳定收入、真实案例与顾问人才；渠道合作把成熟产品规模化输出；国央企项目进一步提升品牌势能与利润水平。
+            </p>
+          </div>
+          <div class="path">
+            <article>
+              <small>方向一</small>
+              <h3>沉淀案例与人才</h3>
+              <p>定制项目解决真实问题，并形成可传播、可复用的专业资产。</p>
+            </article>
+            <article>
+              <small>方向二</small>
+              <h3>复制成熟能力</h3>
+              <p>把验证过的方法封装为标准产品，通过伙伴入口放大市场覆盖。</p>
+            </article>
+            <article>
+              <small>方向三</small>
+              <h3>提升品牌与利润</h3>
+              <p>以结构化、可验收的项目进入国央企，提升品牌溢价。</p>
+            </article>
+            <article>
+              <small>持续循环</small>
+              <h3>让能力反哺市场</h3>
+              <p>更强的品牌、更成熟的产品与更多案例，继续提升三条业务方向。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+    <button class="top" id="top">↑</button>
+    <script>
+      document.querySelectorAll(".tab").forEach(
+        (b) =>
+          (b.onclick = () => {
+            document
+              .querySelectorAll(".tab,.panel")
+              .forEach((x) => x.classList.remove("active"));
+            b.classList.add("active");
+            document.querySelector("#" + b.dataset.tab).classList.add("active");
+          }),
+      );
+      document.querySelectorAll("[data-open-direction]").forEach((card) => {
+        card.addEventListener("click", () => {
+          document
+            .querySelector(`.tab[data-tab="${card.dataset.openDirection}"]`)
+            ?.click();
+        });
+      });
+      document.querySelectorAll(".acc button").forEach((b) => {
+        b.setAttribute("aria-expanded", "false");
+        b.onclick = () => {
+          const open = b.parentElement.classList.toggle("open");
+          b.setAttribute("aria-expanded", String(open));
+        };
+      });
+      const strategyMeta = {
+        traditional: [
+          "方向一 · 全产品线按需组合",
+          "面向传统老市场，产品可根据客户需求灵活组合或定制。",
+        ],
+        channel: [
+          "方向二 · 七款标准化产品",
+          "面向渠道合作，精益生产与组织发展双线输出。",
+        ],
+        soe: [
+          "方向三 · 两类重点产品＋培训",
+          "面向国央企招投标，聚焦班组建设、流程优化与人员培训。",
+        ],
+      };
+      const products = [
+        [
+          "精益现场快诊",
+          "traditional",
+          "精益生产｜入口产品",
+          "1.98万—2.98万",
+          "3天",
+        ],
+        [
+          "5S战斗营",
+          "traditional",
+          "精益生产｜爆款产品",
+          "4.98万—6.98万",
+          "5天＋21天固化",
+        ],
+        [
+          "降本增效百日战",
+          "traditional",
+          "精益生产｜主力产品",
+          "12.8万—19.8万",
+          "12周",
+        ],
+        [
+          "精益班组锻造",
+          "traditional",
+          "精益生产｜持续改善产品",
+          "6.98万—9.98万",
+          "3个月",
+        ],
+        [
+          "组织健康体检",
+          "traditional",
+          "组织发展（OD）｜入口产品",
+          "4.98万—7.98万",
+          "2周",
+        ],
+        [
+          "战略解码工作坊",
+          "traditional",
+          "组织发展（OD）｜主力产品",
+          "8.98万—13.8万",
+          "2周",
+        ],
+        [
+          "绩效破局",
+          "traditional",
+          "组织发展（OD）｜主力产品",
+          "9.98万—16.8万",
+          "6—8周",
+        ],
+        [
+          "企业文化落地工程",
+          "traditional",
+          "组织发展（OD）",
+          "按项目定价",
+          "交付周期灵活",
+        ],
+        ["招商第一面", "traditional", "服务礼仪", "按项目定价", "交付周期灵活"],
+        [
+          "礼序·国企接待标准",
+          "traditional",
+          "服务礼仪",
+          "按项目定价",
+          "交付周期灵活",
+        ],
+        [
+          "服务触点规范营",
+          "traditional",
+          "服务礼仪",
+          "按项目定价",
+          "交付周期灵活",
+        ],
+        [
+          "各类管理内训",
+          "traditional",
+          "按客户需求定制课题",
+          "按项目定价",
+          "交付周期灵活",
+        ],
+        [
+          "ISO体系服务",
+          "traditional",
+          "按客户需求对接或交付",
+          "按项目定价",
+          "交付周期灵活",
+        ],
+        [
+          "其他非标服务",
+          "traditional",
+          "快速响应、定制交付",
+          "按项目定价",
+          "交付周期灵活",
+        ],
+        [
+          "精益现场快诊",
+          "channel",
+          "精益生产｜入口产品",
+          "1.98万—2.98万",
+          "3天",
+        ],
+        [
+          "5S战斗营",
+          "channel",
+          "精益生产｜爆款产品",
+          "4.98万—6.98万",
+          "5天＋21天固化",
+        ],
+        [
+          "降本增效百日战",
+          "channel",
+          "精益生产｜主力产品",
+          "12.8万—19.8万",
+          "12周",
+        ],
+        [
+          "精益班组锻造",
+          "channel",
+          "精益生产｜持续改善产品",
+          "6.98万—9.98万",
+          "3个月",
+        ],
+        [
+          "组织健康体检",
+          "channel",
+          "组织发展（OD）｜入口产品",
+          "4.98万—7.98万",
+          "2周",
+        ],
+        [
+          "战略解码工作坊",
+          "channel",
+          "组织发展（OD）｜主力产品",
+          "8.98万—13.8万",
+          "2周",
+        ],
+        [
+          "绩效破局",
+          "channel",
+          "组织发展（OD）｜主力产品",
+          "9.98万—16.8万",
+          "6—8周",
+        ],
+        [
+          "班组建设系列",
+          "soe",
+          "核心主打｜六款产品",
+          "10万—30万＋",
+          "交付周期灵活",
+        ],
+        [
+          "流程优化",
+          "soe",
+          "核心主打｜流程梳理与优化",
+          "15万—50万＋",
+          "交付周期灵活",
+        ],
+        [
+          "人员培训",
+          "soe",
+          "辅助产品｜管理、精益、内训师培养",
+          "5万—20万",
+          "交付周期灵活",
+        ],
+      ];
+      products
+        .filter((p) => p[1] === "traditional")
+        .forEach((p) => {
+          p[3] = "按项目定价";
+          p[4] = "交付周期灵活";
+        });
+      const traditionalGroups = [
+        [
+          "精益生产",
+          "现场改善、降本增效与班组能力提升",
+          ["精益现场快诊", "5S战斗营", "降本增效百日战", "精益班组锻造"],
+        ],
+        [
+          "组织发展（OD）",
+          "组织诊断、战略落地、绩效与文化建设",
+          ["组织健康体检", "战略解码工作坊", "绩效破局", "企业文化落地工程"],
+        ],
+        [
+          "服务礼仪",
+          "招商、国企接待与服务触点规范",
+          ["招商第一面", "礼序·国企接待标准", "服务触点规范营"],
+        ],
+        ["培训类", "根据客户需求定制管理课题", ["各类管理内训"]],
+        ["ISO体系类", "根据客户需求对接或交付", ["ISO体系服务"]],
+        ["其他非标类", "快速响应客户提出的其他需求", ["其他非标服务"]],
+      ];
+      let filter = "traditional";
+      const grid = document.querySelector("#productGrid"),
+        search = document.querySelector("#search"),
+        count = document.querySelector("#productCount"),
+        strategyTitle = document.querySelector("#strategyTitle"),
+        strategyIntro = document.querySelector("#strategyIntro");
+      function render() {
+        let q = search.value.trim().toLowerCase();
+        let d = products.filter(
+          (p) => p[1] === filter && p.join("").toLowerCase().includes(q),
+        );
+        strategyTitle.textContent = strategyMeta[filter][0];
+        strategyIntro.textContent = strategyMeta[filter][1];
+        count.textContent = `${d.length} 项产品`;
+        const card = (p, i = 0) =>
+          `<article class="product" style="animation-delay:${Math.min(i * 25, 200)}ms"><div><h4>${p[0]}</h4><span class="tag">${p[2]}</span></div><div class="price">${p[3]}<small>${p[4]}</small></div></article>`;
+        if (filter === "traditional") {
+          const groups = traditionalGroups
+            .map((g) => [g[0], g[1], d.filter((p) => g[2].includes(p[0]))])
+            .filter((g) => g[2].length);
+          grid.innerHTML = groups.length
+            ? `<div class="product-groups">${groups
+                .map(
+                  (
+                    g,
+                    i,
+                  ) => `<section class="product-group ${i === 0 ? "open" : ""}">
+                    <button class="group-toggle" aria-expanded="${i === 0}"><span><b>${g[0]}</b><small>${g[1]}</small></span><small>${g[2].length} 项产品</small><i>＋</i></button>
+                    <div class="group-body">${g[2].map(card).join("")}</div>
+                  </section>`,
+                )
+                .join("")}</div>`
+            : '<div class="empty">当前策略下没有找到匹配产品，请尝试其他关键词。</div>';
+          grid.querySelectorAll(".group-toggle").forEach((b) => {
+            b.onclick = () => {
+              const open = b.parentElement.classList.toggle("open");
+              b.setAttribute("aria-expanded", String(open));
+            };
+          });
+        } else {
+          grid.innerHTML = d.length
+            ? d.map(card).join("")
+            : '<div class="empty">当前策略下没有找到匹配产品，请尝试其他关键词。</div>';
+        }
+      }
+      render();
+      search.oninput = render;
+      document.querySelectorAll(".filter").forEach(
+        (b) =>
+          (b.onclick = () => {
+            document.querySelectorAll(".filter").forEach((x) => {
+              x.classList.remove("active");
+              x.setAttribute("aria-selected", "false");
+            });
+            b.classList.add("active");
+            b.setAttribute("aria-selected", "true");
+            filter = b.dataset.filter;
+            search.value = "";
+            render();
+          }),
+      );
+      document.querySelectorAll(".play-tab").forEach(
+        (b) =>
+          (b.onclick = () => {
+            document
+              .querySelectorAll(".play-tab,.play-panel")
+              .forEach((x) => x.classList.remove("active"));
+            b.classList.add("active");
+            document
+              .querySelector("#" + b.dataset.play)
+              .classList.add("active");
+          }),
+      );
+      const sections = document.querySelectorAll("main > .section");
+      sections.forEach((section) => section.classList.add("reveal-ready"));
+      const revealObserver = new IntersectionObserver(
+        (entries) =>
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              revealObserver.unobserve(entry.target);
+            }
+          }),
+        { threshold: 0.08 },
+      );
+      sections.forEach((section) => revealObserver.observe(section));
+      const navLinks = document.querySelectorAll(".navlinks a");
+      const navObserver = new IntersectionObserver(
+        (entries) => {
+          const visible = entries.find((entry) => entry.isIntersecting);
+          if (!visible?.target.id) return;
+          navLinks.forEach((link) =>
+            link.classList.toggle(
+              "current",
+              link.getAttribute("href") === `#${visible.target.id}`,
+            ),
+          );
+        },
+        { rootMargin: "-25% 0px -65% 0px" },
+      );
+      document
+        .querySelectorAll("main section[id]")
+        .forEach((section) => navObserver.observe(section));
+      const topBtn = document.querySelector("#top");
+      onscroll = () => {
+        meter.style.width =
+          (scrollY / (document.documentElement.scrollHeight - innerHeight)) *
+            100 +
+          "%";
+        topBtn.classList.toggle("show", scrollY > 700);
+      };
+      topBtn.onclick = () => scrollTo({ top: 0, behavior: "smooth" });
+    </script>
+  </body>
+</html>
